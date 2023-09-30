@@ -16,9 +16,10 @@ public class TriggerSwitch : MonoBehaviour
 
     private bool isRightCollision(Collider other)
     {
-        return (((1 << other.gameObject.layer) & keyLayer) != 0) ||
-            (other.transform.parent == specificTarget) ||
-            (other.transform == specificTarget);
+        bool isSpecific = (specificTarget != null) && ((other.transform.parent == specificTarget) ||
+            (other.transform == specificTarget));
+        return (((1 << other.gameObject.layer) & keyLayer) != 0) || isSpecific;
+            
     }
 
     private void OnTriggerEnter(Collider other)

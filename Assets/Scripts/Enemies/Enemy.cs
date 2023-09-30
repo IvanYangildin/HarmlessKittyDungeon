@@ -7,9 +7,7 @@ public class Enemy : MonoBehaviour
     private float damage;
 
     [SerializeField]
-    private float invulnerableCooldown,
-                stunnedCooldown,
-                attackCooldown;
+    private float stunnedCooldown, attackCooldown;
 
     [SerializeField]
     private float repulsionStrength, 
@@ -40,19 +38,19 @@ public class Enemy : MonoBehaviour
     }
 
 
-    Coroutine invulnerableCor = null, stunnedCor = null;
-    private void HitReaction(Weapon weapon)
+    Coroutine stunnedCor = null;
+    public void HitReaction(Weapon weapon)
     {
+        weapon.TargetAffect(gameObject);
+
         IsInvulnerable = true;
         stunned = true;
 
         Repulsion(weapon.AttackSourcePosition);
         enemyAudio.Play();
 
-        if (invulnerableCor != null) StopCoroutine(invulnerableCor);
         if (stunnedCor != null) StopCoroutine(stunnedCor);
 
-        invulnerableCor = StartCoroutine(Timer.Countdown(() => IsInvulnerable = false, invulnerableCooldown));
         stunnedCor = StartCoroutine(Timer.Countdown(() => stunned = false, stunnedCooldown));
     }
 
@@ -80,15 +78,14 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        Weapon weapon = other.gameObject.GetComponentInParent<Weapon>();
-        if (!IsInvulnerable && (weapon != null) && (weapon.IsAttacking))
-        {
-            weapon.TargetAffect(gameObject);
-            HitReaction(weapon);
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    Weapon weapon = other.gameObject.GetComponentInParent<Weapon>();
+    //    if ((weapon != null) && (weapon.IsAttacking))
+    //    {
+    //        HitReaction(weapon);
+    //    }
+    //}
 
     private void OnCollisionStay(Collision collision)
     {

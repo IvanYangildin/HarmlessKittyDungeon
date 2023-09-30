@@ -1,106 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &893578859407525525
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 893578859407525524}
-  - component: {fileID: 893578859407525529}
-  - component: {fileID: 893578859407525530}
-  - component: {fileID: 893578859407525531}
-  m_Layer: 0
-  m_Name: TrapTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &893578859407525524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893578859407525525}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.52, y: -5.03, z: -4.1399994}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2207135560929283928}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &893578859407525529
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893578859407525525}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &893578859407525530
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893578859407525525}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.2, y: 3.3, z: 1.44}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &893578859407525531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893578859407525525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1abd434c1f116f54aa37251a0c9bee29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  specificTarget: {fileID: 2392470377671561851}
-  keyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  Triggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2392470377743653446}
-        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
-        m_MethodName: SetChase
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2392470377464778063}
-        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
-        m_MethodName: SetChase
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  LeftTrigger:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &5575306290627887360
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 893578859407525524}
   - {fileID: 2392470377671561851}
   - {fileID: 2392470377743653443}
   - {fileID: 2392470377464778058}
@@ -149,7 +47,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266624983390164546, guid: bae87484ab9c70445863a15501cdef52, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3266624983390164546, guid: bae87484ab9c70445863a15501cdef52, type: 3}
       propertyPath: m_LocalScale.x
@@ -239,6 +137,58 @@ PrefabInstance:
       propertyPath: enemyChase.detectDistance
       value: 15.95
       objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2392470377743653446}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2392470377464778063}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetChase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetChase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: EnemyAI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: EnemyAI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759198406750128992, guid: bae87484ab9c70445863a15501cdef52, type: 3}
+      propertyPath: WeaponAttacking.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bae87484ab9c70445863a15501cdef52, type: 3}
 --- !u!4 &2392470377671561851 stripped
@@ -259,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266624983390164546, guid: bae87484ab9c70445863a15501cdef52, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3266624983390164546, guid: bae87484ab9c70445863a15501cdef52, type: 3}
       propertyPath: m_LocalScale.x
@@ -372,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3266624983390164546, guid: bae87484ab9c70445863a15501cdef52, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3266624983390164546, guid: bae87484ab9c70445863a15501cdef52, type: 3}
       propertyPath: m_LocalScale.x

@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 7717127393886373990}
   - component: {fileID: 6893929591265907053}
   - component: {fileID: 6170770187939840301}
+  - component: {fileID: 4459581608942208522}
+  - component: {fileID: 4759198406750128992}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -90,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6c3005748631244981f379b3ff82cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 25
+  speedFactor: 35
   maxSpeed: 10
+  maxFallSpeed: 10
+  horizontalDrag: 3
 --- !u!114 &3266624983390164551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +251,63 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4459581608942208522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266624983390164544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad4d6df143579847ae9f4c9d578cf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 4288499320842816566, guid: 05e33e66c1f5c6143af8659845291ad2, type: 3}
+  origin: 0
+--- !u!114 &4759198406750128992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266624983390164544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d42e28ee0b376245975761cce6e4d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackingCooldownTime: 0.8
+  WeaponAttacking:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4459581608942208522}
+        m_TargetAssemblyTypeName: HitMark, Assembly-CSharp
+        m_MethodName: Hitting
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3266624983390164549}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: HitReaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  WeaponZenith:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3266624983103203597
 PrefabInstance:
   m_ObjectHideFlags: 0
